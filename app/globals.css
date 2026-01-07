@@ -1,57 +1,58 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 .dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 .grid-bg {
-    transition: none !important;
-    position: absolute;
-    inset: 0;
+  position: absolute;
+  inset: 0;
 
-    background-color: var(--background);
-    background-image:
-        linear-gradient(to right, #73737350 1px, transparent 1px),
-        linear-gradient(to bottom, #73737350 1px, transparent 1px);
+  background-color: var(--background);
+  background-image: linear-gradient(to right, #73737350 1px, transparent 1px),
+    linear-gradient(to bottom, #73737350 1px, transparent 1px);
 
-    background-size: 50px 50px;
-    mask-image: radial-gradient(
-        ellipse 100% 50% at 50% 0,
-        #000 70%,
-        transparent 110%
-    );
+  background-size: 50px 50px;
+  mask-image: radial-gradient(
+    ellipse 40% 40% at 90% 100%,
+    #000 20%,
+    transparent 110%
+  );
 }
 
-@keyframes grid-lines {
-    from {
-        background-position: 0px 0px;
-    }
-    to {
-        background-position:
-            50px 0,
-            0 50px;
-    }
-}
+.grid-bg-inv {
+  position: absolute;
+  inset: 0;
 
-@utility animate-grid-lines {
-    animation: grid-lines 2s linear infinite;
+  background-color: var(--background);
+  background-image: linear-gradient(to right, #73737350 1px, transparent 1px),
+    linear-gradient(to bottom, #73737350 1px, transparent 1px);
+
+  background-size: 50px 50px;
+  mask-image: radial-gradient(
+    ellipse 40% 40% at 10% 0%,
+    #000 20%,
+    transparent 110%
+  );
 }
