@@ -2,14 +2,15 @@
 import { motion } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true));
+
   if (!mounted) return null;
 
   const current = theme === "system" ? resolvedTheme : theme;
@@ -24,7 +25,11 @@ export default function ThemeToggle() {
       className="p-3 transition-colors text-zinc-500"
       onClick={() => setTheme(current === "dark" ? "light" : "dark")}
     >
-      {isDark ? <Sun /> : <Moon />}
+      {isDark ? (
+        <Sun fill="#fff" color="#fff" />
+      ) : (
+        <Moon fill="#000" stroke="1" color="#fff" />
+      )}
     </motion.button>
   );
 }
