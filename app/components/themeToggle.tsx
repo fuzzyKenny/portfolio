@@ -14,6 +14,8 @@ export default function ThemeToggle() {
 
   const current = theme === "system" ? resolvedTheme : theme;
 
+  const isDark = resolvedTheme === "dark";
+
   return (
     <motion.button
       whileTap={{
@@ -22,7 +24,7 @@ export default function ThemeToggle() {
       className="p-3 transition-colors text-zinc-500"
       onClick={() => setTheme(current === "dark" ? "light" : "dark")}
     >
-      {theme === "dark" ? <Sun /> : <Moon />}
+      {isDark ? <Sun /> : <Moon />}
     </motion.button>
   );
 }
