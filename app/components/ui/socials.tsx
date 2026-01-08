@@ -1,6 +1,6 @@
 "use client";
 
-import { socials } from "../data/data";
+import { socials } from "../../data/data";
 import { motion } from "motion/react";
 
 export default function SocialLinks() {
@@ -10,10 +10,11 @@ export default function SocialLinks() {
         <motion.a
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
           key={id}
           href={link}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           aria-label={name}
           title={name}
           className="cursor-pointer text-xl"

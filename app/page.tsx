@@ -1,14 +1,15 @@
-import Banner from "./components/banner";
-import Profile from "./components/profile";
-import { ProfileSkeletonLayout } from "./components/skeletonProfile";
+import Banner from "./components/ui/banner";
+import Profile from "./components/ui/profile";
 import MainPage from "./homepage/IndexPage";
 
 const Page = () => {
   return (
     <main>
-      <Banner />
       <MainPage>
-        <Profile />
+        <div>
+          <Banner />
+          <Profile />
+        </div>
       </MainPage>
     </main>
   );

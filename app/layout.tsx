@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 import { ThemeProvider } from "./utils/theme-provider";
-import GridLines from "./components/gridLines";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// const doto = Doto({
+//   subsets: ["latin"],
+//   variable: "--font-doto",
+// });
 
 export const metadata: Metadata = {
   title: "Kritiraj",
@@ -27,14 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative bg-background text-foreground transition-colors duration-300 ease-in-out`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative text-foreground transition-colors duration-300`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
         >
-          <GridLines />
           <div className="relative z-10">{children}</div>
         </ThemeProvider>
       </body>

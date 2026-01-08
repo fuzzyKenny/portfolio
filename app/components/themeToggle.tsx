@@ -24,8 +24,9 @@ export default function ThemeToggle() {
   return (
     <motion.button
       whileTap={{ rotate: 270, scale: 0.9 }}
-      onClick={toggleTheme}
       whileHover={{ scale: 1.2 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      onClick={toggleTheme}
       className="cursor-pointer text-black dark:text-white"
     >
       {isDark ? (
