@@ -1,34 +1,39 @@
 "use client";
-import { motion } from "motion/react";
-import { Sun, Moon } from "lucide-react";
 
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { motion, scale } from "motion/react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true));
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!mounted) return null;
 
-  const current = theme === "system" ? resolvedTheme : theme;
-
-  const isDark = resolvedTheme === "dark";
-
   return (
     <motion.button
-      whileTap={{
-        rotate: 180,
-      }}
-      className="p-3 transition-colors text-zinc-500"
-      onClick={() => setTheme(current === "dark" ? "light" : "dark")}
+      whileTap={{ rotate: 360, scale: 0.9 }}
+      onClick={toggleTheme}
+      whileHover={{ scale: 1.1 }}
     >
-      {isDark ? (
-        <Sun fill="#fff" color="#fff" />
+      {theme === "dark" ? (
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        >
+          <Sun fill="#fff" stroke="#fff" />
+        </motion.div>
       ) : (
-        <Moon fill="#000" stroke="1" color="#fff" />
+        <Moon fill="#000" stroke="#000" />
       )}
     </motion.button>
   );
