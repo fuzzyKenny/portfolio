@@ -19,6 +19,8 @@ export default function ThemeToggle() {
 
   if (!mounted) return null;
 
+  const isDark = theme === "dark";
+
   return (
     <motion.button
       whileTap={{ rotate: 270, scale: 0.9 }}
@@ -26,7 +28,7 @@ export default function ThemeToggle() {
       whileHover={{ scale: 1.2 }}
       className="cursor-pointer"
     >
-      {theme === "dark" ? (
+      {isDark ? (
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
