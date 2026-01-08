@@ -1,21 +1,16 @@
-import BgPattern from "./components/backgroundPatten";
+import Banner from "./components/banner";
+import GridLines from "./components/gridLines";
 import ThemeToggle from "./components/themeToggle";
-import Clock from "./components/time";
+import HomePage from "./homepage/IndexPage";
 
-const Home = () => {
+const Page = () => {
   return (
     <>
-      <div>
-        <BgPattern />
-      </div>
-      <main className="min-h-screen p-8">
-        <div className="max-w-4xl mx-auto flex items-center justify-end">
-          <Clock />
-          <ThemeToggle />
-        </div>
-      </main>
+      <HomePage>
+        <Banner />
+      </HomePage>
     </>
   );
 };
 
-export default Home;
+export default Page;
