@@ -1,15 +1,16 @@
 import Banner from "./components/banner";
-import GridLines from "./components/gridLines";
-import ThemeToggle from "./components/themeToggle";
-import HomePage from "./homepage/IndexPage";
+import Profile from "./components/profile";
+import MainPage from "./homepage/IndexPage";
 
 const Page = () => {
   return (
-    <>
-      <HomePage>
-        <Banner />
-      </HomePage>
-    </>
+    <main>
+      <Banner />
+      <MainPage>
+        {/* <p>Placeholder.</p> */}
+        <Profile />
+      </MainPage>
+    </main>
   );
 };
 

@@ -13,10 +13,10 @@ export default function LocalTime() {
     return () => clearInterval(timer);
   }, []);
 
-  if (!time) return null;
+  if (!time) return <div>--:--</div>;
 
   return (
-    <div className="text-md">
+    <div className="text-md pointer-events-none">
       {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
     </div>
   );

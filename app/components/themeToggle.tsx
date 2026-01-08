@@ -21,9 +21,10 @@ export default function ThemeToggle() {
 
   return (
     <motion.button
-      whileTap={{ rotate: 360, scale: 0.9 }}
+      whileTap={{ rotate: 270, scale: 0.9 }}
       onClick={toggleTheme}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.2 }}
+      className="cursor-pointer"
     >
       {theme === "dark" ? (
         <motion.div
