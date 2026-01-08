@@ -18,6 +18,9 @@ export default function Profile() {
         height={100}
         alt="Twitter profile picture"
         className="absolute -bottom-12 left-5 border border-white dark:border-neutral-200 rounded-full sm:-bottom-12 sm:left-12 sm:scale-150"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAgklEQVR4AWSOQQ7DIAwEp41QI0D0lN7S//+MF1AIhbSAEjjEkuWVd7T2HfjVfi1Lm1UbY7quQNkVqq6aAiXVoWAA7Mzzg/e6ssXtCsT4xZgnUkm4jbieEELAOVf6Q047Z3VgmiZyzlhrSSmd/vjBe4+UEqVUSXFXQAjRjHpGa92BPwAAAP//BVRkPgAAAAZJREFUAwDHRDRdhJtGcwAAAABJRU5ErkJggg=="
+        priority
       />
       <Image
         src={profile.bannerImg}
@@ -25,6 +28,9 @@ export default function Profile() {
         height={500}
         alt="Twitter banner image"
         className="rounded-lg border border-white dark:border-neutral-200"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAYAAACuyE5IAAAAVElEQVR4ATyKsQ0AIQzErEhUsAODwIzULEFNBSU7MEOGyPMUFD7pZEuM0VJKBjxyzlZrtVKKyTl47wkhICKng703a62LzDkZY+Ccu/IfVaW1Ru+dDwAA//81Z0ULAAAABklEQVQDAClwIM7W8SifAAAAAElFTkSuQmCC"
+        priority
       />
     </motion.div>
   );
