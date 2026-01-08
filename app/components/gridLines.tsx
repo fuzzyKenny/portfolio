@@ -10,7 +10,7 @@ export default function GridLines() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 100 }}
       transition={{ duration: 1 }}
-      className="pointer-events-none fixed inset-0 -z-10"
+      className="pointer-events-none fixed inset-0 -z-10 animate-pulse"
     >
       <div className="grid-bg absolute inset-0"></div>
       <div className="grid-bg-inv absolute inset-0"></div>

@@ -20,7 +20,6 @@ export default function ThemeToggle() {
   if (!mounted) return null;
 
   const isDark = theme === "dark";
-  console.log(`isDark: ${isDark}`);
 
   return (
     <motion.button

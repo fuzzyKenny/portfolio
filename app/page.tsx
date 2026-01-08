@@ -7,7 +7,6 @@ const Page = () => {
     <main>
       <Banner />
       <MainPage>
-        {/* <p>Placeholder.</p> */}
         <Profile />
       </MainPage>
     </main>
