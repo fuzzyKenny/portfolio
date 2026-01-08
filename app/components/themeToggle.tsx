@@ -20,13 +20,14 @@ export default function ThemeToggle() {
   if (!mounted) return null;
 
   const isDark = theme === "dark";
+  console.log(`isDark: ${isDark}`);
 
   return (
     <motion.button
       whileTap={{ rotate: 270, scale: 0.9 }}
       onClick={toggleTheme}
       whileHover={{ scale: 1.2 }}
-      className="cursor-pointer"
+      className="cursor-pointer text-black dark:text-white"
     >
       {isDark ? (
         <motion.div
@@ -36,7 +37,7 @@ export default function ThemeToggle() {
           <Sun fill="#fff" stroke="#fff" />
         </motion.div>
       ) : (
-        <Moon fill="#000" stroke="#000" />
+        <Moon fill="#000" />
       )}
     </motion.button>
   );
