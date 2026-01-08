@@ -17,7 +17,12 @@ export default function LocalTime() {
 
   return (
     <div className="text-md pointer-events-none">
-      {time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+      {time.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23",
+        timeZone: "Asia/Kolkata",
+      })}
     </div>
   );
 }
