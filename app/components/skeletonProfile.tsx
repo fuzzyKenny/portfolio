@@ -11,8 +11,8 @@ export function SkeletonProfile({ classname }: { classname: string }) {
 export function ProfileSkeletonLayout() {
   return (
     <div className="relative">
-      <SkeletonProfile classname="h-32 rounded-lg" />
-      <SkeletonProfile classname="h-25 w-25 absolute -bottom-12 left-5 rounded-full" />
+      <SkeletonProfile classname="h-32 sm:h-62 rounded-lg" />
+      <SkeletonProfile classname="h-25 w-25 sm:h-40 sm:w-40 absolute sm:-bottom-20 -bottom-12 left-5 rounded-full" />
     </div>
   );
 }
