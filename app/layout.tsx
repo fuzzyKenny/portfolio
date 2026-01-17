@@ -14,11 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// const doto = Doto({
-//   subsets: ["latin"],
-//   variable: "--font-doto",
-// });
-
 export const metadata: Metadata = {
   title: "Kritiraj",
   description: "Kritiraj's Portfolio Website",
